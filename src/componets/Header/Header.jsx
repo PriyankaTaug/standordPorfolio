@@ -14,6 +14,7 @@ const Header = () => {
           <li><a href="/contact">TESTIMONIALS</a></li>
         </ul>
         </nav>
+        <button className='header-button'>CONTACT ME</button>
       </header>
    
   )
