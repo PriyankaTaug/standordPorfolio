@@ -1,31 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react'
 import './Header.css';
-
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
-    <header className='header'>
-      <nav className='nav'>
-        <div className='menu-icon' onClick={toggleMenu}>
-          <i className={menuOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
-        </div>
-        <ul className={`nav_list ${menuOpen ? 'show' : ''}`}>
-          <li><a href="/">HOME</a></li>
-          <li><a href="/about">ABOUT</a></li>
-          <li><a href="/contact">SKILLS</a></li>
-          <li><a href="/services">SERVICES</a></li>
-          <li><a href="/projects">PROJECTS</a></li>
-          <li><a href="/testimonials">TESTIMONIALS</a></li>
+    <div>
+      <nav>
+        <ul className='nav-list'>
+          <li><a href="">Home</a></li>
+          <li><a href="">About Me</a></li>
+          <li><a href="">Skills</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">Projects</a></li>
+          <li><a href="">Testimonials</a></li>
         </ul>
       </nav>
-      <button className='header-button'>CONTACT ME</button>
-    </header>
-  );
-};
+    </div>
+  )
+}
 
-export default Header;
+export default Header

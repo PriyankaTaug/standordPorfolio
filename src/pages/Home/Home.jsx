@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Home.css';
 import * as THREE from 'three';
 
@@ -120,8 +120,9 @@ const Home = () => {
         <div className='column2'>
           <h2 className='home-h2'>Full stack Developer</h2>
           <p className='home-p'>I specialize in crafting scalable web applications and intuitive user interfaces. With expertise in modern development practices, I transform complex problems into elegant, efficient, and maintainable solutions.</p>
-          <div>
+          <div className='button'>
             <button className='home-button'>View Projects</button>  
+
             <button className='home-button1'>Download CV</button>
           </div>
         </div>

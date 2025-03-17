@@ -8,8 +8,18 @@
   margin-right: auto;
   align-items: center;
   gap: 40px;
+  overflow: hidden;
 }
-
+@keyframes rollInFromRight {
+  from {
+    transform: translateX(100vw) rotate(360deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+  }
+}
 /* Black box (left column) */
 .column1 {
   width: 500px; /* Fixed width */
@@ -22,6 +32,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: rollInFromRight 1.5s ease-in-out;
 }
 
 .column-h2 {
@@ -73,10 +84,12 @@
   font-size: 16px;
   font-weight: bold;
   padding: 12px 24px;
-  border-radius: 25px;
+  border-radius: 10px;
   margin-top: 20px;
   cursor: pointer;
+  border-color: grey;
   transition: all 0.3s ease-in-out;
+  
 }
 
 .home-button {
@@ -98,4 +111,50 @@
 .home-button1:hover {
   background-color: black;
   color: white;
+}
+.button
+{
+  display: flex;
+  gap:10px;
+}
+
+@media screen and (max-width: 768px) {
+  .row-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+  }
+
+  /* Show column2 first */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide in column1 from the right */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100vw);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .column2 {
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  .column1 {
+    opacity: 0; /* Hide initially */
+    animation: slideInRight 1s ease-in-out forwards;
+    animation-delay: 1s; /* Delay appearance of column1 */
+  }
 }
