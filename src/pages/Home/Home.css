@@ -1,50 +1,54 @@
-.row-container
-{ 
+.row-container { 
   margin-top: 100px;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  gap: 20px;
+  width: 80%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  gap: 40px;
+  overflow: hidden;
 }
-.column1
-{
-  flex: 1;
+@keyframes rollInFromRight {
+  from {
+    transform: translateX(100vw) rotate(360deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+  }
+}
+/* Black box (left column) */
+.column1 {
+  width: 500px; /* Fixed width */
   padding: 20px;
   background-color: black;
   border-radius: 20px;
-  height:75vh;
+  height: 75vh;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: rollInFromRight 1.5s ease-in-out;
 }
-.column2
-{
-  flex: 2;
-  padding: 20px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 8px;
-  height:75vh;
-}
-.column-h2
-{
+
+.column-h2 {
   color: white;
-  text-align: center;
-  font-size: 50px;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: 'Kingred Modern';
 }
+
+/* Typing effect */
 @keyframes typing {
-  from
-  {
-    width: 0;
-  }
-  to
-  {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
-.typing-effect
-{
+
+.typing-effect {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
@@ -52,3 +56,105 @@
   animation: typing 3s steps(10, end) forwards;
 }
 
+/* White box (right column) */
+.column2 {
+  flex: 1;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-h2 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.home-p {
+  font-size: 22px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.home-button, .home-button1 {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-color: grey;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.home-button {
+  background-color: #0062cc;
+  color: white;
+  border: none;
+}
+
+.home-button:hover {
+  background-color: #004ea2;
+}
+
+.home-button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.home-button1:hover {
+  background-color: black;
+  color: white;
+}
+.button
+{
+  display: flex;
+  gap:10px;
+}
+
+@media screen and (max-width: 768px) {
+  .row-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+  }
+
+  /* Show column2 first */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide in column1 from the right */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100vw);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .column2 {
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  .column1 {
+    opacity: 0; /* Hide initially */
+    animation: slideInRight 1s ease-in-out forwards;
+    animation-delay: 1s; /* Delay appearance of column1 */
+  }
+}
