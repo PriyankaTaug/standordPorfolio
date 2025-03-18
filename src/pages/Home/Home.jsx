@@ -112,15 +112,16 @@ const ParticleBackground = () => {
 };
 
 const Home = () => {
+ 
   return (
-    <div >
+    <>
       <ParticleBackground />
       
       <div className='row-container' >
         <div className='column2'>
           <h2 className='home-h2'>Full stack Developer</h2>
           <p className='home-p'>I specialize in crafting scalable web applications and intuitive user interfaces. With expertise in modern development practices, I transform complex problems into elegant, efficient, and maintainable solutions.</p>
-          <div className='button'>
+          <div className='button1'>
             <button className='home-button'>View Projects</button>  
 
             <button className='home-button2'>Download CV</button>
@@ -130,7 +131,7 @@ const Home = () => {
           <h2 className='column-h2 typing-effect'>PRIYANKA</h2>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
