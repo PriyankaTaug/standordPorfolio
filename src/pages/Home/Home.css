@@ -80,7 +80,7 @@
 }
 
 /* Buttons */
-.home-button, .home-button1 {
+.home-button, .home-button2 {
   font-size: 16px;
   font-weight: bold;
   padding: 12px 24px;
@@ -102,13 +102,13 @@
   background-color: #004ea2;
 }
 
-.home-button1 {
+.home-button2{
   background-color: white;
   color: black;
   border: 2px solid black;
 }
 
-.home-button1:hover {
+.home-button2:hover {
   background-color: black;
   color: white;
 }

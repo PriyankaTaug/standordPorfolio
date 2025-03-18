@@ -123,7 +123,7 @@ const Home = () => {
           <div className='button'>
             <button className='home-button'>View Projects</button>  
 
-            <button className='home-button1'>Download CV</button>
+            <button className='home-button2'>Download CV</button>
           </div>
         </div>
         <div className='column1'>
