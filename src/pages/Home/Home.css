@@ -2,7 +2,7 @@
   margin-top: 100px;
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -80,7 +80,7 @@
 }
 
 /* Buttons */
-.home-button, .home-button2 {
+.home-button, .home-button1 {
   font-size: 16px;
   font-weight: bold;
   padding: 12px 24px;
@@ -106,24 +106,32 @@
   background-color: white;
   color: black;
   border: 2px solid black;
+ 
 }
 
 .home-button2:hover {
   background-color: black;
   color: white;
 }
-.button
+.button1
 {
   display: flex;
+  flex-direction: row;
   gap:10px;
+ 
+  
 }
 
 @media screen and (max-width: 768px) {
   .row-container {
+    margin-top: 30px;
     flex-direction: column; /* Stack elements vertically */
     align-items: center;
   }
-
+  .home-p{
+    text-align: left;
+  
+  }
   /* Show column2 first */
   @keyframes fadeIn {
     from {
@@ -156,5 +164,23 @@
     opacity: 0; /* Hide initially */
     animation: slideInRight 1s ease-in-out forwards;
     animation-delay: 1s; /* Delay appearance of column1 */
+ 
   }
+  .button1 {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Space between stacked buttons */
+    width: 100%; /* Full width container */
+  }
+  
+  .home-button{
+    width: 100%; /* Make buttons full width */
+  }
+  .home-button2 {
+    height: 50px;
+  }
+  .column1{
+    display: none;
+  }
+
 }
